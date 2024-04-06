@@ -36,9 +36,7 @@ for (paths, dirs, filenames) in w:
             textDesc = soup.find(attrs={"class": "workshopItemDescription"}).get_text()
             # Find the usename account box, stript the tabs, take the username from the raw code by split at the newline
             creatorName = soup.find(attrs={"class": "friendBlockContent"}).get_text().strip().rsplit("\n")[0]
-            
-            print(textDesc)
-            print(creatorName)
+        
 
             with open(modelFinalFolder + newName + "/" +'readme.txt', 'w') as f:
                 f.write('Downloaded from Steam, from {}. \n Original description : \n{}'.format(creatorName, textDesc))
